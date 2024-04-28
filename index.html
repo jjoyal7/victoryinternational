@@ -12,6 +12,62 @@
     <link rel="icon" type="image/png" href="./Assets/images/only logo.png">
     <link rel="stylesheet" href="./Assets/css/style.css">
 
+    <style>
+        /* Animation for timeline */
+        .container .timeline {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .container .timeline.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover effect for timeline */
+        .timeline:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Styling for timeline icon */
+        .container.timeline-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* background: #007bff; */
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        /* Style for the buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect */
+        .btn:hover {
+            background-color: rgb(239, 188, 93);
+            /* Change background color on hover */
+            color: black;
+        }
+
+        /* Additional styles for the second button */
+        .btn-brand {
+            margin-left: 10px;
+            /* Add some margin between buttons */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -73,7 +129,7 @@
 
     <!-- about -->
 
-    <section id="about" class="section-padding">
+    <section id="about" class="section-padding" data-aos="fade-up">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -81,7 +137,6 @@
                         <h1 class="display-4 fw-semibold">About Us</h1>
                         <div class="line"></div>
                         <p>
-
                             We specialize in catering to high-fashion buyers who seek blends like bamboo and cotton,
                             bamboo and elastane, cotton and polyester, viscose with elastane, and more.
                         </p>
@@ -105,7 +160,8 @@
                                 <p>
                                     Manufacturers with robust quality management systems, including quality control,
                                     assurance, and continuous improvement, are more likely to produce consistently
-                                    high-quality products.</p>
+                                    high-quality products.
+                                </p>
                             </div>
                         </div>
                         <div class="d-flex mb-3">
@@ -115,9 +171,9 @@
                             <div>
                                 <h5>Sourcing</h5>
                                 <p>
-
                                     Sourcing: the process of finding and acquiring goods, services, or resources from
-                                    external suppliers to fulfill specific needs or requirements.</p>
+                                    external suppliers to fulfill specific needs or requirements.
+                                </p>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -127,189 +183,120 @@
                             <div>
                                 <h5>Pricing</h5>
                                 <p>
-
                                     Pricing: the process of setting monetary value for goods/services, crucial for
                                     competitiveness, revenue maximization, and profitability, considering factors like
-                                    costs, competition, demand, value, and margins.</p>
+                                    costs, competition, demand, value, and margins.
+                                </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
-
     </section>
+
 
 
     <!-- our approach -->
 
 
+    <section>
 
-
-    <div class="container">
-        <h2 class="heading display-4 fw-semibold text-center"> Our Approach</h2>
-        <div class="line"></div>
-        <p class="or text-center justify-content-center"> Establishing a robust sampling setup, overseen by experts,for promotional and quality
-            assurance purposes.
-        </p>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="main-timeline5">
-                    <div class="timeline">
-                        <div class="timeline-icon"><span class="year">Step 1</span></div>
-                        <div class="timeline-content">
-                            <h3 class="title">Product Sampling</h3>
-                            <p class="description">
+        <div class="container " id="ourapproach">
+            <h2 class="heading display-4 fw-semibold text-center"> Our Approach</h2>
+            <div class="line"></div>
+            <p class="or text-center justify-content-center"> Establishing a robust sampling setup, overseen by
+                experts,for
+                promotional and quality
+                assurance purposes.
+            </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-timeline5">
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">Step 1</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Product Sampling</h3>
+                                <p class="description">
                                 <p class="con">
-                                  
-Our facility provides tailored samples for promotion and quality control, setting the standard for future work. We update our library regularly with the latest trends and technology for buyer reference.
 
-                            </p>
+                                    Our facility provides tailored samples for promotion and quality control, setting
+                                    the
+                                    standard for future work. We update our library regularly with the latest trends and
+                                    technology for buyer reference.
+
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-icon"><span class="year">Step 2</span></div>
-                        <div class="timeline-content">
-                            <h3 class="title">Price Negotiation</h3>
-                            <p class="description">
-                        
-Our key strength lies in price negotiation, securing competitive pricing without compromising quality. We ensure transparency throughout the negotiation process, prioritizing competitiveness for our clients.
-                            </p>
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">Step 2</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Price Negotiation</h3>
+                                <p class="description">
+
+                                    Our key strength lies in price negotiation, securing competitive pricing without
+                                    compromising quality. We ensure transparency throughout the negotiation process,
+                                    prioritizing competitiveness for our clients.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-icon"><span class="year">Step 3</span></div>
-                        <div class="timeline-content">
-                            <h3 class="title">Sourcing</h3>
-                            <p class="description">
-                            Victory International. specializes in sourcing due to well-established vendor connections and strong teamwork. This allows us to explore new possibilities and procure the best garments.
-                            </p>
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">Step 3</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Sourcing</h3>
+                                <p class="description">
+                                    Victory International. specializes in sourcing due to well-established vendor
+                                    connections and strong teamwork. This allows us to explore new possibilities and
+                                    procure
+                                    the best garments.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-icon"><span class="year">Step 4</span></div>
-                        <div class="timeline-content">
-                            <h3 class="title">Vendor Selection</h3>
-                            <p class="description">
-                   
-We connect with vendors based on product specifications and order requirements, carefully selecting those with the right attitude and dedication to excellence. Vendor selection is crucial to our success.
-                            </p>
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">Step 4</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Vendor Selection</h3>
+                                <p class="description">
+
+                                    We connect with vendors based on product specifications and order requirements,
+                                    carefully selecting those with the right attitude and dedication to excellence.
+                                    Vendor
+                                    selection is crucial to our success.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-icon"><span class="year">Step 5</span></div>
-                        <div class="timeline-content">
-                            <h3 class="title">Quality Assurance</h3>
-                            <p class="description">
-                    
-We ensure top quality at every stage from pre-production to post-production, following a Total Quality Management approach. Products are shipped only after meeting client acceptability norms.
-                            </p>
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">Step 5</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Quality Assurance</h3>
+                                <p class="description">
+
+                                    We ensure top quality at every stage from pre-production to post-production,
+                                    following a
+                                    Total Quality Management approach. Products are shipped only after meeting client
+                                    acceptability norms.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-icon"><span class="year">Step 6</span></div>
-                        <div class="timeline-content">
-                            <h3 class="title">Logistics and Shipment follow up</h3>
-                            <p class="description">
-              
-Our logistics department manages all shipping documents and obtains client approval before and after shipment, ensuring smooth delivery. We also maintain records of follow-ups to save time.
-                            </p>
+                        <div class="timeline">
+                            <div class="timeline-icon"><span class="year">Step 6</span></div>
+                            <div class="timeline-content">
+                                <h3 class="title">Logistics and Shipment follow up</h3>
+                                <p class="description">
+
+                                    Our logistics department manages all shipping documents and obtains client approval
+                                    before and after shipment, ensuring smooth delivery. We also maintain records of
+                                    follow-ups to save time.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
-    <!-- <section class="approach" id="ourapproach">
-        <h2 class="heading display-4 fw-semibold"> Our Approach</h2>
-        <div class="line"></div>
-        <p> Establishing a robust sampling setup, overseen by experts, for promotional and quality
-            assurance purposes.
-        </p>
-
-
-        <div class="timeline-items">
-
-            <div class="timeline-item">
-                <div class="timeline-dot"> </div>
-                <div class="timeline-date">Product Sampling</div>
-
-                <div class="timeline-content">
-                    <h3 class="con">Step 1</h3>
-                    <p class="con">We offer a highly efficient sampling facility with an expert-supervised in-house
-                        department. Our
-                        team provides samples for promotional and quality control purposes. We develop designs to client
-                        specifications, ensuring fit and style satisfaction through sample evaluation. Once approved,
-                        our samples set the benchmark for further work. We regularly update our library with the latest
-                        fashion trends, technological advancements, and new fabrics for buyer reference.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"> </div>
-                <div class="timeline-date">Price Negotiation</div>
-
-                <div class="timeline-content">
-                    <h3>step 2</h3>
-                    <p>Price negotiation is one of our key strength. We get competitively priced products for our
-                        clients without any compromise on quality. The price negotiation is kept transparent with the
-                        knowledge of the buyer. We take extra care to maintain transparency and competitiveness when it
-                        comes to price negotiation.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"> </div>
-                <div class="timeline-date">Sourcing</div>
-
-                <div class="timeline-content">
-                    <h3 class="con">step 3</h3>
-                    <p class="con">Well established vendor connection along with great team work makes Glory House
-                        Apparels Inc.,
-                        specialist in sourcing. This also allows the company to explore the unexplored possibilities of
-                        sourcing the best garments.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"> </div>
-                <div class="timeline-date">Vendor Selection</div>
-
-                <div class="timeline-content">
-                    <h3>step 4</h3>
-                    <p>We connect with vendors and select a vendor according to the product specification and order
-                        placement. We take time to choose the right vendor. We opt for people who has the right attitude
-                        and who strive for the best. Vendor selection is one of the key success.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"> </div>
-                <div class="timeline-date">Quality Assurance</div>
-
-                <div class="timeline-content">
-                    <h3 class="con">step 5</h3>
-                    <p class="con">We conduct timely quality checks at all stages from pre-production, mid inspection to
-                        post-production. Quality is the hallmark of all our products. We believe in total quality
-                        management (TQM) which is a combination of quality control and quality assurance. Once the
-                        product passes the acceptability norms of the client only then it is shipped.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"> </div>
-                <div class="timeline-date">Logistics and Shipment follow up</div>
-
-                <div class="timeline-content">
-                    <h3>step 6</h3>
-                    <p>Our logistics department handles all the documents regarding shipping of the product. We ensure
-                        that we have the correct shipping documents and get prior approval from the client before and
-                        post shipment. This ensures trouble free delivery to the destination. We also record our follow
-                        ups which saves time</p>
-                </div>
-            </div>
-        </div>
-
-    </section> -->
 
     <!-- our collections -->
 
@@ -338,7 +325,7 @@ Our logistics department manages all shipping documents and obtains client appro
 
                                     <a href="https://drive.google.com/file/d/1m5oDkhIqR8j7ibdJz1bAMVC4683kEObp/view?usp=sharing"
                                         target="_blank" data-fancybox="gallery" class="iconbox"><i
-                                            class="fa-solid fa-magnifying-glass"></i></a>
+                                            class="fa-solid fa-magnifying-glass "></i></a>
                                     <!-- <div class="bn"><a href="#"><button>Infant</button></a></div> -->
                                 </div>
                             </div>
@@ -443,53 +430,72 @@ Our logistics department manages all shipping documents and obtains client appro
 
 
     <!-- footer -->
-    <footer class="bg-dark">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row gy-5">
-                    <div class="col-lg-3 col-sm-6">
-                        <a href="#"><img src="./Assets/images/only logo.png" style="width: 60px;" alt=""><span
-                                style="font-size: 20px;"> VICTORY INTERNATIONAL</span></a>
-                        <!-- <div class="line"></div> --><br><br>
-                        <p>Victory International garments are designed with style, comfort, and durability in mind,
-                            ensuring that you look and feel your best. We are a company dedicated to providing
-                            high-quality clothing for Kids, Children's, Woman's, & Men's.</p>
+    <section>
+        <footer class="bg-dark justify-content-between text-center">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row gy-5">
+                        <div class="col-lg-4 col-sm-6">
+                            <a href="#"><img src="./Assets/images/only logo.png" style="width: 90px;" alt=""><span
+                                    style="font-size: 20px;"> VICTORY INTERNATIONAL <br></span></a>
+                                    <div class="line"></div>
+                            <p class=" text-white">Sourcing of Manufacturers</p>
+                          
+                            <p class="f">Victory International garments are designed with style, comfort, and durability
+                                in mind,
+                                ensuring that you look and feel your best. We are a company dedicated to providing
+                                high-quality clothing for Kids, Children's, Woman's, & Men's.</p>
 
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 ">
-                        <h5 class="mb-0 text-white">SOCIALS MEDIA</h5>
-                        <div class="line"></div>
-                        <div class="social-icons ">
-                            <a href="#"><i class="fa-brands fa-facebook text-white p-3"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter text-white p-3"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin text-white p-3"></i></a>
                         </div>
-                    </div>
+
+                        <div class="col-lg-4 col-sm-6 ">
+                            <h5 class="mb-0 text-white">SOCIALS MEDIA</h5>
+                            <div class="line"></div>
+                            <div class="social-icons ">
+                                <a href="#"><i class="fa-brands fa-facebook text-white p-3"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter text-white p-3"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin text-white p-3"></i></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 col-sm-6">
+                            <h5 class="mb-3 text-white">CONTACT US</h5>
+                            <div class="line mb-3"></div>
+                            <div class="text-white" style="justify-content: left; text-align: start;">
+                                <h2 class="ft text-white">Joseph Ganesh  J</h2>
+                                <p class="mb-1 ">Managing Director</p>
+                               <a href="josephg@vctintls.com"> <p class="mb-1"><i class="fas fa-envelope-open"></i> josephg@vctintls.com</p></a>
+                                <p class="mb-1"><i class="fas fa-phone"></i> +917845877166</p>
+                                <p class="mb-1"><i class="fas fa-map-marker-alt"></i> No. 6A, 2nd Street, Thiyagi
+                                    Kumaran Colony, N.R.K.Puram, Main Road, Tirupur-641-607</p>
+                            </div>
+                        </div>
 
 
 
-                    <div class="col-lg-3 col-sm-6">
-                        <h5 class="mb-0 text-white">CONTACT US</h5>
-                        <div class="line"></div>
-                        <!-- <i class="fa-regular fa-user"></i> -->
-                        <h2 class="ft text-white">Ganesh. J</h2>
-                        <p class="ft text-white ">Managing Director
-                        <p>
-                        <h6 class="ft text-white fw-light" style="word-spacing: 5px;"><i
-                                class="fa-solid fa-envelope-open"></i> josephg@vctintls.com</h6>
-                        <h6 class="ft text-white fw-light" style="word-spacing: 10px;"><i
-                                class="fa-solid fa-location-dot"></i> +917845877166 </h6>
-                        <h6 class="ft text-white fw-light" style="word-spacing: 10px;"><i
-                                class="fa-solid fa-map-location-dot"></i> No.6A,2nd Street,Thiyagi Kumaran Colony
-                            N.R.K.Puram,Main,Road <br />Tirupur-641-607</h6>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-        <!-- 
+
+
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-12 text-center  ">
+                            <div class="col-12 text-white text-center">© 2023 VICTORY INTERNATIONAL PVT</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- 
                     <div class="col-lg-3 col-sm-6">
                         <h5 class="mb-0 text-white">CONTACT US</h5>
                         <div class="line"></div>
@@ -507,21 +513,44 @@ Our logistics department manages all shipping documents and obtains client appro
         </div> -->
 
 
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-12 text-center  ">
-                        <div class="col-12 text-white text-center">© 2023 VICTORY INTERNATIONALS PVT</div>
-                    </div>
-
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center  ">
+                    <div class="col-12 text-white text-center">© 2023 VICTORY INTERNATIONALS PVT</div>
                 </div>
+
             </div>
         </div>
+    </div>
     </footer>
 
 
 
+    <script>
 
+        // Add animation when timeline enters the viewport
+        window.addEventListener('scroll', function () {
+            var timelineItems = document.querySelectorAll('.timeline');
+            timelineItems.forEach(function (item) {
+                if (isElementInViewport(item)) {
+                    item.classList.add('show');
+                }
+            });
+        });
+
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
