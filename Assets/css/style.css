@@ -18,6 +18,7 @@ body {
     font-family: var(--font-base);
     line-height: 1.7;
     /* color: var(--c-body); */
+
 }
 
 h1,
@@ -133,7 +134,9 @@ img {
 }
 
 
-
+#about{
+   /* background: linear-gradient(#ffdad5, #fff7f9); */
+}
 
 
 /* section-title */
@@ -163,6 +166,7 @@ img {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 /* inconbod */
@@ -477,11 +481,15 @@ footer ul {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 
 .contact-container {
     font-family: 'outfit';
     background: linear-gradient(#ffdad5, #fff7f9);
+    /* background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTQxZDhrMTdjeHB3NjdocDkwYmsxY2J4c25ldHk2bDAyZTBtbW8yMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lKaeQAunM3hZaqsOpj/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .contact-container {
@@ -637,6 +645,7 @@ footer ul {
 .box {
     transform: translateX(0, 0, 0, 0.2) 0px 60px 40px -7px;
     transition: transform 0.4s ease;
+    
 }
 
 .box:nth-of-type(even) {
