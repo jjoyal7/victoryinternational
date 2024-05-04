@@ -18,7 +18,7 @@ body {
     font-family: var(--font-base);
     line-height: 1.7;
     /* color: var(--c-body); */
-
+overflow-x: hidden;
 }
 
 h1,
@@ -107,7 +107,7 @@ img {
 .btn {
     font-weight: 500;
     font-size: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border-radius: 0;
     padding: 10px 24px;
 }
@@ -186,12 +186,18 @@ img {
 /* our approach */
 .main-timeline5 {
     overflow: hidden;
-    position: relative
+    position: relative;
+    
+    /* transform: translateX(400%); */
+    /* transition: transform 0.4s ease; */
 }
+
+
 
 .main-timeline5 .timeline {
     position: relative;
-    margin-top: -79px
+    margin-top: -79px;
+
 }
 
 .main-timeline5 .timeline:first-child {
@@ -235,6 +241,7 @@ img {
     border-top-color: #f44556;
     border-right-color: #f44556;
     z-index: 1;
+    
     transform: rotate(45deg)
 }
 
