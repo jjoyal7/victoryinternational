@@ -129,7 +129,7 @@ img {
     background-image: linear-gradient(to bottom, #fc8302, #eb9b47);
     color: white;
     padding-top: 5%;
-    padding-bottom: 5%;
+
 }
 
 #ban {
@@ -159,65 +159,93 @@ img {
     animation: words 10s infinite;
 }
 
+
 .text-animation span::after {
     content: "";
+    /* background-color: var(--c-dark); */
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
+    /* border-left: 1px solid var(--c-brand); */
     right: 8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
 
 @keyframes cursor {
     to {
-        border-left: 2px solid var(--c-brand);
+        /* border-left: 2px solid var(--c-brand); */
     }
 }
 
 @keyframes words {
-    0%, 20% {
+
+    0%,
+    20% {
         content: "Product Sampling";
     }
-    21%, 40% {
+
+    21%,
+    40% {
         content: "Price Negotiation";
     }
-    41%, 60% {
+
+    41%,
+    60% {
         content: "Sourcing";
     }
-    61%, 80% {
+
+    61%,
+    80% {
         content: "Vendor Selection";
     }
-    81%, 100% {
+
+    81%,
+    100% {
         content: "Quality Assurance";
     }
 }
 
 @keyframes typing {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
         width: 0;
     }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
         width: calc(100% + 8px);
     }
 }
 
+
+
 .promo-title {
     font-size: 40px;
     font-weight: 600;
-    margin-top: 30px;
+    margin-top: 100px;
+}
+
+.ply-btn {
+    width: 45px;
+    margin: 20px;
 }
 
 .bottom-img {
     width: 100%;
-}
-
-@media (max-width: 768px) {
-    .promo-title {
-        font-size: 30px;
-    }
-    .text-animation {
-        font-size: 25px;
-    }
 }
 
 
