@@ -18,7 +18,7 @@ body {
     font-family: var(--font-base);
     line-height: 1.7;
     /* color: var(--c-body); */
-overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 h1,
@@ -125,17 +125,144 @@ img {
 }
 
 /* banner */
-
 #banner {
+    background-image: linear-gradient(to bottom, #fc8302, #eb9b47);
+    color: white;
+    padding-top: 5%;
+
+}
+
+#ban {
+    color: #212529;
+    background-color: white;
+    border-radius: 50px;
+}
+
+#ban:hover {
+    background-color: #212529;
+    color: white;
+}
+
+.text-animation {
+    font-size: 35px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: "web developer";
+    color: white;
+    animation: words 10s infinite;
+}
+
+
+.text-animation span::after {
+    content: "";
+    /* background-color: var(--c-dark); */
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    /* border-left: 1px solid var(--c-brand); */
+    right: 8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        /* border-left: 2px solid var(--c-brand); */
+    }
+}
+
+@keyframes words {
+
+    0%,
+    20% {
+        content: "Product Sampling";
+    }
+
+    21%,
+    40% {
+        content: "Price Negotiation";
+    }
+
+    41%,
+    60% {
+        content: "Sourcing";
+    }
+
+    61%,
+    80% {
+        content: "Vendor Selection";
+    }
+
+    81%,
+    100% {
+        content: "Quality Assurance";
+    }
+}
+
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+
+
+
+.promo-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+
+.ply-btn {
+    width: 45px;
+    margin: 20px;
+}
+
+.bottom-img {
+    width: 100%;
+}
+
+
+
+
+
+
+/* #banner {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.438)), url(../images/banner.jpg);
     background-position: center;
     background-size: cover;
 
-}
+} */
 
 
-#about{
-   /* background: linear-gradient(#ffdad5, #fff7f9); */
+#about {
+    /* background: linear-gradient(#ffdad5, #fff7f9); */
 }
 
 
@@ -187,7 +314,7 @@ img {
 .main-timeline5 {
     overflow: hidden;
     position: relative;
-    
+
     /* transform: translateX(400%); */
     /* transition: transform 0.4s ease; */
 }
@@ -241,7 +368,7 @@ img {
     border-top-color: #f44556;
     border-right-color: #f44556;
     z-index: 1;
-    
+
     transform: rotate(45deg)
 }
 
@@ -652,7 +779,7 @@ footer ul {
 .box {
     transform: translateX(0, 0, 0, 0.2) 0px 60px 40px -7px;
     transition: transform 0.4s ease;
-    
+
 }
 
 .box:nth-of-type(even) {
@@ -662,10 +789,12 @@ footer ul {
 .box.show {
     transform: translateX(0);
 }
+
 /*  */
-#about{
+#about {
     scroll-behavior: smooth;
 }
+
 /*  banner*/
 #banner .container {
     opacity: 0;
@@ -677,30 +806,33 @@ footer ul {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 /* about fade */
- #about .container {
+#about .container {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
         opacity: 0;
-        animation: fadeIn 1s forwards;
+        transform: translateY(-20px);
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    /* Bounce-in animation for the iconboxes */
-    /* .iconbox {
+/* Bounce-in animation for the iconboxes */
+/* .iconbox {
         opacity: 0;
         animation: bounceIn 1s forwards;
     }
@@ -716,14 +848,15 @@ footer ul {
         }
     } */
 
-    
+
 /* our collections */
 
-   /* Define animation keyframes */
-   @keyframes scrollAnimation {
+/* Define animation keyframes */
+@keyframes scrollAnimation {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(20px);
     }
