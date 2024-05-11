@@ -126,7 +126,8 @@ img {
 
 /* banner */
 #banner {
-    background-image: linear-gradient(to bottom, #fc8302, #eb9b47);
+    background-image: linear-gradient(to bottom, var(--c-brand), rgb(244, 193, 100));
+
     color: white;
     padding-top: 5%;
 
@@ -246,6 +247,7 @@ img {
 
 .bottom-img {
     width: 100%;
+ 
 }
 
 
@@ -267,6 +269,10 @@ img {
 
 
 /* section-title */
+
+#about{
+    
+}
 
 .section-title {
     margin-bottom: 40px;
@@ -318,8 +324,12 @@ img {
     /* transform: translateX(400%); */
     /* transition: transform 0.4s ease; */
 }
-
-
+#ourapproach .year{
+   font-size: 50px; 
+}
+#ourapproach .year{
+/*  */
+}
 
 .main-timeline5 .timeline {
     position: relative;
@@ -563,7 +573,7 @@ footer {
 
 .footer-top {
     padding-bottom: 40px;
-    border-bottom: 1px solid rgb(255, 255, 255, 0.01);
+    border-bottom: 1px solid rgba(74, 64, 64, 0.01);
 }
 
 .footer-bottom {
@@ -868,3 +878,8 @@ footer ul {
 }
 
 /*  */
+
+/* contact us*/
+#contact textarea{
+    text-decoration: none;
+}
