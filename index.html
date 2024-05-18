@@ -1,665 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victory Internatioanl</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/378f2932c3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-    <link rel="icon" type="image/png" href="./Assets/images/only logo.png">
-    <link rel="stylesheet" href="./Assets/css/style.css">
-
+    <title>3D Carousel</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
     <style>
-        /* Animation for timeline */
-        .container .timeline {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
-
-        .container .timeline.show {
-            opacity: 1;
-            transform: translateY(0);
+        .section-padding {
+            padding: 60px 0;
         }
-
-        /* Hover effect for timeline */
-        .timeline:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Styling for timeline icon */
-        .container.timeline-icon {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            /* background: #007bff; */
-            color: #fff;
-            font-size: 24px;
+        .text-center {
             text-align: center;
-            line-height: 50px;
         }
-
-        /* Style for the buttons */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-
+        .fw-semibold {
+            font-weight: 600;
+        }
+        .line {
+            height: 2px;
+            width: 50px;
+            background: #333;
+            margin: 10px auto 20px;
+        }
+        #carousel {
+            perspective: 1200px;
+            background: #100000;
+            padding-top: 10%;
+            font-size: 0;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+        #spinner {
+            transform-style: preserve-3d;
+            height: 300px;
+            transform-origin: 50% 50% -500px;
+            transition: 1s;
+        }
+        #spinner img {
+            width: 40%;
+            max-width: 425px;
+            position: absolute;
+            left: 30%;
+            transform-origin: 50% 50% -500px;
+            outline: 1px solid transparent;
+        }
+        #spinner img:nth-child(1) { transform: rotateY(0deg); }
+        #spinner img:nth-child(2) { transform: rotateY(-45deg); }
+        #spinner img:nth-child(3) { transform: rotateY(-90deg); }
+        #spinner img:nth-child(4) { transform: rotateY(-135deg); }
+        #spinner img:nth-child(5) { transform: rotateY(-180deg); }
+        #spinner img:nth-child(6) { transform: rotateY(-225deg); }
+        #spinner img:nth-child(7) { transform: rotateY(-270deg); }
+        #spinner img:nth-child(8) { transform: rotateY(-315deg); }
+        span {
             color: #fff;
+            margin: 5%;
+            display: inline-block;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-size: 2rem;
+            transition: 0.6s color;
+            position: relative;
+            margin-top: -6rem;
+            border-bottom: none;
+            line-height: 0;
         }
-
-        /* Hover effect */
-        .btn:hover {
-            background-color: rgb(239, 188, 93);
-            /* Change background color on hover */
-            color: black;
-        }
-
-        /* Additional styles for the second button */
-        .btn-brand {
-            margin-left: 10px;
-            /* Add some margin between buttons */
-        }
-
-textarea{
-resize: none;
-}
-/* @keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: rotate(-90deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0);
-  }
-}
-
-.timeline-content {
-  animation: rotateIn 1s ease-in-out forwards;
-  opacity: 0;
-} */
-
-
+        span:hover { color: #888; cursor: pointer; }
     </style>
-
 </head>
-
 <body>
 
-    <!-- navbar -->
-
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand logo text-white" href="#">
-                    <img src="./Assets/images/only logo.png" alt="Logo" style="width: 40px;">
-                    <span>VICTORY INTERNATIONAL</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: white;" href="#banner">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: white;" href="#about">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: white;" href="#ourapproach">Our Approach</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: white;" href="#collections">Our Collections</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="color: white;" href="#contact">Get in Touch</a>
-                        </li>
-                       
-                    </ul>
-                    <a href="#foot" class="btn btn-brand">Contact Us</a>
+<section id="collections" class="box section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">Our Collections</h1>
+                    <div class="line"></div>
+                    <p>
+                        Victory International offers a wide selection of garments with various fabrics, styles, and colors, catering to every occasion from casual to formal.
+                    </p>
                 </div>
-            </div>
-        </nav>
-    </section>
 
-    <!-- banner -->
-
-    <section id="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="promo-title">VICTORY INTERNATIONAL</h3>
-                    <p style="color: #fff;"> Sourcing of Manufacturers</p>
-                    <h4 class="text-animation">We Focus on <span></span></h4>
-                    <p>VI simplifies your apparel business with exclusive sourcing services. We're not just agents; we're a pure service organization.</p>
-                    <a href="#collections" class="btn btn-brand" id="ban">See More</a>
+                <div id="carousel">
+                    <figure id="spinner">
+                        <img src="https://m.media-amazon.com/images/I/615pksFmAlL._SX569_.jpg" alt="Infant">
+                        <img src="https://m.media-amazon.com/images/I/71IdXp1T7NL._SX679_.jpg" alt="Boys">
+                        <img src="https://m.media-amazon.com/images/I/710x5u8DmoL._SY445_.jpg" alt="Girls">
+                        <img src="https://m.media-amazon.com/images/I/51CVdHb2cKL._SY679_.jpg" alt="Mens">
+                        <img src="https://m.media-amazon.com/images/I/71KEw4I3NML._SY550_.jpg" alt="Womens">
+                    </figure>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="./Assets/baan.png" class="img-fluid"> 
-                </div>
-            </div>
-        </div>
-        <img src="./Assets/waves.png"  class="bottom-img">
-    </section>
 
-
-    <!-- <section id="banner" class="min-vh-100 d-flex align-items-center text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h1 class="text-uppercase fw-semibold text-white display-4">Victory International</h1>
-                    <h5 class="text-white mt-3 mb-4 fs-3 ">Sourcing of Manufacturers</h5>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-center">
-                        <a href="#contact" class="btn btn-brand me-sm-2 mb-2 mb-sm-0">Reach Us</a>
-                        <a href="#collections" class="btn btn-brand ms-sm-2">Explore</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- about us -->
-
-    <section id="about" class="box section-padding" data-aos="fade-up">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="section-title">
-                        <h1 class="display-4 fw-semibold">About Us</h1>
-                        <div class="line"></div>
-                        <p>
-                            We specialize in catering to high-fashion buyers who seek blends like bamboo and cotton,
-                            bamboo and elastane, cotton and polyester, viscose with elastane, and more.
-                        </p>
-                    </div>
-                </div>
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-6">
-                        <img src="./Assets/images/about.jpg" alt="img">
-                    </div>
-                    <div class="col-lg-5">
-                        <!-- <h1>VICTORY INTERNATIONAL</h1> -->
-                        <P class="mt-3 mb-4">Referring to the practice or industry of manufacturers sourcing materials
-                            or components from
-                            other manufacturers or suppliers</P>
-                        <div class="d-flex pt-4 mb-3">
-                            <div class="iconbox me-4">
-                                <i><i class="fa-solid fa-ranking-star"></i></i>
-                            </div>
-                            <div>
-                                <h5>Quality</h5>
-                                <p>
-                                    Manufacturers with robust quality management systems, including quality control,
-                                    assurance, and continuous improvement, are more likely to produce consistently
-                                    high-quality products.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <div class="iconbox me-4">
-                                <i><i class="fa-solid fa-cart-shopping"></i></i>
-                            </div>
-                            <div>
-                                <h5>Sourcing</h5>
-                                <p>
-                                    Sourcing: the process of finding and acquiring goods, services, or resources from
-                                    external suppliers to fulfill specific needs or requirements.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="iconbox me-4">
-                                <i><i class="fa-solid fa-hand-holding-dollar"></i></i>
-                            </div>
-                            <div>
-                                <h5>Pricing</h5>
-                                <p>
-                                    Pricing: the process of setting monetary value for goods/services, crucial for
-                                    competitiveness, revenue maximization, and profitability, considering factors like
-                                    costs, competition, demand, value, and margins.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- our approach -->
-
-
-    <section class="box">
-
-        <div class="container " id="ourapproach">
-            <h2 class="heading display-4 fw-semibold text-center"> Our Approach</h2>
-            <div class="line"></div>
-            <p class="or text-center justify-content-center"> Establishing a robust sampling setup, overseen by
-                experts,for
-                promotional and quality
-                assurance purposes.
-            </p>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-timeline5">
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year"><i class="fa-solid fa-shirt"></i></span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Product Sampling</h3>
-                                <p class="description">
-                                <p class="con text-white">
-
-                                    Our facility offers customized samples for promotion and quality control, setting the standard for future work. We regularly update our library with the latest trends and technology for buyer reference
-
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year"><i class="fa-solid fa-dollar-sign"></i></span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Price Negotiation</h3>
-                                <p class="description">
-
-                                    Our key strength lies in price negotiation, securing competitive pricing without
-                                    compromising quality. We ensure transparency throughout the negotiation process,
-                                    prioritizing competitiveness for our clients.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year"><i class="fa-solid fa-earth-americas"></i></span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Sourcing</h3>
-                                <p class="description">
-                                    Victory International. specializes in sourcing due to well-established vendor
-                                    connections and strong teamwork. This allows us to explore new possibilities and
-                                    procure
-                                    the best garments.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year"><i class="fa-solid fa-people-arrows"></i></span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Vendor Selection</h3>
-                                <p class="description">
-
-                                    We connect with vendors based on product specifications and order requirements,
-                                    carefully selecting those with the right attitude and dedication to excellence.
-                                    Vendor
-                                    selection is crucial to our success.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year"><i class="fa-solid fa-ranking-star"></i></span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Quality Assurance</h3>
-                                <p class="description">
-
-                                    We ensure top quality at every stage from pre-production to post-production,
-                                    following a
-                                    Total Quality Management approach. Products are shipped only after meeting client
-                                    acceptability norms.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year"><i class="fa-solid fa-truck-fast"></i></span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Logistics and Shipment follow up</h3>
-                                <p class="description">
-
-                                    Our logistics department manages all shipping documents and obtains client approval
-                                    before and after shipment, ensuring smooth delivery. We also maintain records of
-                                    follow-ups to save time.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- our collections -->
-
-    <section id="collections" class=" box section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="section-title">
-                        <h1 class="display-4 fw-semibold">Our Collections</h1>
-                        <div class="line"></div>
-                        <p>
-                            Victory International offers a wide selection of garments with various fabrics, styles, and
-                            colors, catering to every occasion from casual to formal.
-                        </p>
-                    </div>
-
-                    <div class="container text-center">
-                        <div class="row align-items-start">
-                            <div class="col-md-4 col-6">
-                                <div class="collection-item image-zoom">
-                                    <H3>INFANT</H3>
-                                    <div class="image-zoom-wrapper">
-                                        <img src="https://m.media-amazon.com/images/I/615pksFmAlL._SX569_.jpg"
-                                            alt="...">
-                                    </div>
-
-                                    <a href="https://drive.google.com/file/d/1sG2bsy3YREln659fFZgytTbOHD-yuBzg/view?usp=sharing"
-                                        target="_blank" data-fancybox="gallery" class="iconbox"><i
-                                            class="fa-solid fa-magnifying-glass "></i></a>
-                                    <!-- <div class="bn"><a href="#"><button>Infant</button></a></div> -->
-                                </div>
-                            </div>
-
-                            <!--  -->
-
-                            <div class="col-md-4 col-6">
-                                <div class="collection-item image-zoom">
-                                    <H3>BOYS</H3>
-                                    <div class="image-zoom-wrapper">
-                                        <img src="https://m.media-amazon.com/images/I/71IdXp1T7NL._SX679_.jpg"
-                                            alt="...">
-                                    </div>
-                                    <a href="https://drive.google.com/file/d/1lBRH6M3Rk3pkJcHN297wyVU4XavUMSjd/view?usp=sharing"
-                                        target="_blank" class="iconbox"><i class="fa-solid fa-magnifying-glass"></i></a>
-                                    <!-- <div class="bn"><a href="#"><button>Boys</button></a></div> -->
-                                </div>
-                            </div>
-
-
-                            <!--  -->
-
-                            <div class="col-md-4 col-6">
-                                <div class="collection-item image-zoom">
-                                    <H3>GIRLS</H3>
-                                    <div class="image-zoom-wrapper">
-                                        <img src="https://m.media-amazon.com/images/I/710x5u8DmoL._SY445_.jpg"
-                                            alt="...">
-                                    </div>
-                                    <a href="https://drive.google.com/file/d/15EeneA21--1ZGpQnpOAZxcM-NuBWZ94w/view?usp=sharing"
-                                        target="_blank" data-fancybox="gallery" class="iconbox"><i
-                                            class="fa-solid fa-magnifying-glass"></i></a>
-                                    <!-- <div class="bn"> <a href="#"><button>Girls</button></a></div> -->
-                                </div>
-                            </div>
-
-                            <!--  -->
-                            <div class="row justify-content-center">
-                                <div class="col-md-4 col-6">
-                                    <div class="collection-item image-zoom">
-                                        <H3>MENS</H3>
-                                        <div class="image-zoom-wrapper">
-                                            <img src="https://m.media-amazon.com/images/I/51CVdHb2cKL._SY679_.jpg"
-                                                alt="...">
-                                        </div>
-                                        <a href="https://drive.google.com/file/d/183KjZHNiFdmZfkXu1X0Do3pDaOM813Op/view?usp=sharing"
-                                            target="_blank" data-fancybox="gallery" class="iconbox"><i
-                                                class="fa-solid fa-magnifying-glass"></i></a>
-                                        <!-- <div class="bn"><a href="#"><button>Mens</button></a></div> -->
-                                    </div>
-                                </div>
-
-
-                                <!--  -->
-
-                                <div class="col-md-4 col-6">
-                                    <div class="collection-item image-zoom">
-                                        <H3>WOMENS</H3>
-                                        <div class="image-zoom-wrapper">
-                                            <img src="https://m.media-amazon.com/images/I/71KEw4I3NML._SY550_.jpg"
-                                                alt="...">
-                                        </div>
-                                        <a href="https://drive.google.com/file/d/1mnGOaHVZhb6_GlQvYiAFMUD8AvuUdnHq/view?usp=sharing"
-                                            target="_blank" class="iconbox"><i
-                                                class="fa-solid fa-magnifying-glass"></i></a>
-                                        <!-- <div class="bn"><a href="#"><button>Womens</button></a></div> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-    </section>
-
-
-    <!-- contact us -->
-    <section class="box">
-        <div class="contact-container " id="contact">
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="form">
-                <div class="contact-left-title">
-                    <h2>Get in Touch</h2>
-                    <hr>
-                </div>
-                <input type="hidden" name="access_key" value="72e4b57a-56ba-4f72-b426-952753afd79c">
-                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
-                <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <div class="contact-right">
-                <!-- <img src="../Assets/vi logo.png" style="width: ;" alt=""> -->
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-    <!-- footer -->
-    <section id="foot" >
-        <footer class="bg-dark justify-content-between text-center">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row gy-5">
-                        <!-- <div class="col-lg-4 col-sm-6">
-                            <a href="#"><img src="./Assets/images/only logo.png" style="width: 90px;" alt=""><span
-                                    style="font-size: 20px;"> VICTORY INTERNATIONAL <br></span></a>
-                                    <div class="line"></div>
-                            <p class=" text-white">Sourcing of Manufacturers</p>
-                          
-                            <p class="f">Victory International garments are designed with style, comfort, and durability
-                                in mind,
-                                ensuring that you look and feel your best. We are a company dedicated to providing
-                                high-quality clothing for Kids, Children's, Woman's, & Men's.</p>
-
-                        </div> -->
-
-                        <!-- <div class="col-lg-12 col-sm-6 ">
-                            <h5 class="mb-0 text-white">SOCIALS MEDIA</h5>
-                            <div class="line"></div>
-                            <div class="social-icons ">
-                                <a href="#"><i class="fa-brands fa-facebook text-white p-3"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter text-white p-3"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin text-white p-3"></i></a>
-                            </div>
-                        </div> -->
-
-
-                        <div class="col-lg-12 col-sm-6">
-                            <!-- <h5 class="mb-3 text-white">CONTACT US</h5> -->
-                            <!-- <div class="line mb-3"></div> -->
-                            <div class="text-white" style="justify-content: center;">
-                                <h1 class="ft text-white">Joseph Ganesh  J</h1>
-                                <p class="mb-1 ">Managing Director</p>
-                               <a href="mailto:josephg@vctintls.com"> <p class="mb-1"><i class="fas fa-envelope-open"></i> josephg@vctintls.com</a></p>
-                                <p class="mb-1"><i class="fas fa-phone"></i> +91 7845877166</p>
-                                <p class="mb-1"><i class="fas fa-map-marker-alt"></i> No. 6A, 2nd Street, Thiyagi
-                                    Kumaran Colony, N.R.K.Puram, Main Road,<br/> Tirupur-641-607</p>
-                                    <div class="social-icons ">
-                                        <a href="#"><i class="fa-brands fa-facebook text-white p-5"></i></a>
-                                        <a href="#"><i class="fa-brands fa-twitter text-white p-5"></i></a>
-                                        <a href="#"><i class="fa-brands fa-linkedin text-white p-5"></i></a>
-                                    </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-12 text-center  ">
-                            <div class="col-12 text-white text-center">© 2023 VICTORY INTERNATIONAL PVT</div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </section>
-
-    <!-- 
-                    <div class="col-lg-3 col-sm-6">
-                        <h5 class="mb-0 text-white">CONTACT US</h5>
-                        <div class="line"></div>
-                        <ul>
-                            <li><a href="#"><i class="fa-solid fa-location-dot"></i></a> No.6A,2nd Street</li>
-                            <li><a href="#">Thiyagi Kumaran Colony,</a></li>
-                            <li><a href="#">N.R.K.Puram,Main,Road</a></li>
-                            <li><a href="#">Tirupur-641607</a></li>
-                            <li><a href=""> <i class="fa-solid fa-phone-volume"></i> </a> +7845877166</li>
-                            <li><a href=""> <i class="fa-solid fa-phone-volume"></i> </a> +9750837166</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-    <!-- <div class="footer-bottom">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-12 text-center  ">
-                    <div class="col-12 text-white text-center">© 2023 VICTORY INTERNATIONALS PVT</div>
-                </div>
+                <span onclick="galleryspin(false)">Prev</span>
+                <span onclick="galleryspin(true)">Next</span>
 
             </div>
         </div>
     </div>
-    </footer> -->
+</section>
 
-
-
-    <script>
-
-        // Add animation when timeline enters the viewport
-        window.addEventListener('scroll', function () {
-            var timelineItems = document.querySelectorAll('.timeline');
-            timelineItems.forEach(function (item) {
-                if (isElementInViewport(item)) {
-                    item.classList.add('show');
-                }
-            });
-        });
-
-        // Function to check if an element is in the viewport
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
+<script>
+    var angle = 0;
+    function galleryspin(sign) {
+        let spinner = document.getElementById("spinner");
+        if (!sign) { 
+            angle += 45; 
+        } else { 
+            angle -= 45; 
         }
-
-        const boxes = document.querySelectorAll('.box');
-    window.addEventListener('scroll', checkBoxes);
-    checkBoxes(); // Call the function once to check boxes on page load
-
-    function checkBoxes() {
-        const triggerBottom = window.innerHeight / 5 * 4;
-        boxes.forEach(box => {
-            const boxTop = box.getBoundingClientRect().top;
-            if (boxTop < triggerBottom) {
-                box.classList.add('show');
-            } else {
-                box.classList.remove('show');
-            }
-        });
+        spinner.style.transform = `rotateY(${angle}deg)`;
     }
+</script>
 
-
-//         $(document).on("scroll", function() {
-//   var pageTop = $(document).scrollTop();
-//   var pageBottom = pageTop + $(window).height();
-//   var tags = $(".tag");
-
-//   for (var i = 0; i < tags.length; i++) {
-//     var tag = tags[i];
-
-//     if ($(tag).position().top < pageBottom) {
-//       $(tag).addClass("visible");
-//     } else {
-//       $(tag).removeClass("visible");
-//     }
-//   }
-// });
-
-// Function to check if an element is in the viewport
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// // Function to handle scroll event
-// function handleScroll() {
-//   const timelineContents = document.querySelectorAll('.timeline-content');
-//   timelineContents.forEach(content => {
-//     if (isInViewport(content)) {
-//       content.classList.add('in-view');
-//     }
-//   });
-// }
-
-// // Add event listener for scroll event
-// window.addEventListener('scroll', handleScroll);
-
-// // Initial check when the page loads
-// handleScroll();
-
-
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </body>
-
 </html>
