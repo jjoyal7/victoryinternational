@@ -212,7 +212,7 @@ resize: none;
     <!-- our approach -->
 
 
-    <section class="box">
+    <section class="">
 
         <div class="container " id="ourapproach">
             <h2 class="heading display-4 fw-semibold text-center"> Our Approach</h2>
@@ -222,10 +222,10 @@ resize: none;
                 promotional and quality
                 assurance purposes.
             </p>
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-12">
                     <div class="main-timeline5">
-                        <div class="timeline">
+                        <div class="timeline box">
                             <div class="timeline-icon"><span class="year"><i class="fa-solid fa-shirt"></i></span></div>
                             <div class="timeline-content">
                                 <h3 class="title">Product Sampling</h3>
@@ -237,7 +237,7 @@ resize: none;
                                 </p>
                             </div>
                         </div>
-                        <div class="timeline">
+                        <div class="timeline box">
                             <div class="timeline-icon"><span class="year"><i class="fa-solid fa-dollar-sign"></i></span></div>
                             <div class="timeline-content">
                                 <h3 class="title">Concessions</h3>
@@ -249,7 +249,7 @@ resize: none;
                                 </p>
                             </div>
                         </div>
-                        <div class="timeline">
+                        <div class="timeline box">
                             <div class="timeline-icon"><span class="year"><i class="fa-solid fa-earth-americas"></i></span></div>
                             <div class="timeline-content">
                                 <h3 class="title">Sourcing</h3>
@@ -261,7 +261,7 @@ resize: none;
                                 </p>
                             </div>
                         </div>
-                        <div class="timeline">
+                        <div class="timeline box">
                             <div class="timeline-icon"><span class="year"><i class="fa-solid fa-people-arrows"></i></span></div>
                             <div class="timeline-content">
                                 <h3 class="title">Vendor Selection</h3>
@@ -274,7 +274,7 @@ resize: none;
                                 </p>
                             </div>
                         </div>
-                        <div class="timeline">
+                        <div class="timeline box">
                             <div class="timeline-icon"><span class="year"><i class="fa-solid fa-ranking-star"></i></span></div>
                             <div class="timeline-content">
                                 <h3 class="title">Quality Assurance</h3>
@@ -287,7 +287,7 @@ resize: none;
                                 </p>
                             </div>
                         </div>
-                        <div class="timeline">
+                        <div class="timeline box">
                             <div class="timeline-icon"><span class="year"><i class="fa-solid fa-truck-fast"></i></span></div>
                             <div class="timeline-content">
                                 <h3 class="title">Logistics and Shipment follow up</h3>
@@ -536,7 +536,7 @@ function isElementInViewport(el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-
+// oue approach scroll//
 const boxes = document.querySelectorAll('.box');
 window.addEventListener('scroll', checkBoxes);
 checkBoxes(); // Call the function once to check boxes on page load
@@ -569,17 +569,6 @@ rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
 
 // form//
-
-    // JavaScript to reset the form fields after submission
-    document.getElementById('form').addEventListener('submit', function(event) {
-        // Prevent the default form submission behavior
-        event.preventDefault();
-
-        // Optionally, you can send the form data using AJAX here
-
-        // Clear the form fields
-        document.getElementById('form').reset();
-    });
 
     </script>
 
