@@ -91,7 +91,6 @@ img {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -129,7 +128,6 @@ img {
 
 #banner {
     background-image: linear-gradient(to bottom, var(--c-brand), rgb(220, 190, 133));
-
     color: white;
     padding-top: 5%;
 
@@ -300,6 +298,37 @@ img {
 }
 
 /* Our Approach */
+
+ /* Animation for timeline */
+ .container .timeline {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .container .timeline.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Hover effect for timeline */
+  .timeline:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Styling for timeline icon */
+  .container.timeline-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background: #007bff; */
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+  }
+  
 
 .main-timeline{
     overflow: hidden;
