@@ -114,7 +114,6 @@ img {
     animation: fadeIn 1s forwards;
 }
 
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -472,9 +471,7 @@ img {
         transform: translate(-50%,0);
     }
 }
-#ourapproach .year{
-    font-size:55px;
-  }
+
 
 /* Our Collections */
 
@@ -551,6 +548,7 @@ img {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 
 .contact-container {
