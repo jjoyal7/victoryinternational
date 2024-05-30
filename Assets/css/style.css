@@ -109,6 +109,16 @@ img {
 
 /* Banner */
 
+#banner h3{
+    font-size:60px;
+}
+#banner h4{
+    font-size:40px;
+}
+#banner span{
+color:black;
+}
+
 #banner .container {
     opacity: 0;
     animation: fadeIn 1s forwards;
@@ -329,6 +339,9 @@ img {
     line-height: 50px;
   }
   
+#ourapproach .year{
+    font-size:50px;
+}
 
 .main-timeline{
     overflow: hidden;
