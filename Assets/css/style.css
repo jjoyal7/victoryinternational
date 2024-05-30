@@ -113,16 +113,7 @@ img {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
-#banner h4{
-    color: black;
-}
 
-#banner h3{
-    font-size: 60px;
-}
-#banner h4{
-    font-size: 40px;
-}
 
 @keyframes fadeIn {
     from {
