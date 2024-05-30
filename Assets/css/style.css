@@ -109,6 +109,7 @@ img {
 
 
 /* Banner */
+
 #banner .container {
     opacity: 0;
     animation: fadeIn 1s forwards;
@@ -551,9 +552,11 @@ img {
 
 }
 
+
 .contact-container {
     font-family: 'outfit';
-    background: linear-gradient(#ffdad5, #fff7f9) 
+    background: linear-gradient(#ffdad5, #fff7f9);
+ 
 }
 
 .contact-container {
