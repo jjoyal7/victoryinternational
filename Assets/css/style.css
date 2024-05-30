@@ -472,21 +472,8 @@ img {
         transform: translate(-50%,0);
     }
 }
-/* Define animation keyframes */
-@keyframes scrollAnimation {
-    0% {
-        transform: translateY(0);
-    }
 
-    100% {
-        transform: translateY(20px);
-    }
-}
 
-/* Apply animation to collection items */
-.collection-item {
-    animation: scrollAnimation 2s ease-in-out infinite alternate;
-}
 
 /* Our Collections */
 
@@ -556,6 +543,21 @@ img {
 #collections h3{
     text-align: center;
 }
+@keyframes scrollAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+/* Apply animation to collection items */
+.collection-item {
+    animation: scrollAnimation 2s ease-in-out infinite alternate;
+}
+
 
 /* Contact Us */
 
